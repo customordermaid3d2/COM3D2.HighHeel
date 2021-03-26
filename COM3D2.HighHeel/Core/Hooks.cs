@@ -11,6 +11,8 @@ namespace COM3D2.HighHeel.Core
         private static readonly Dictionary<TBody, MaidTransforms> MaidTransforms = new();
         private static readonly Dictionary<TBody, string> ShoeConfigs = new();
 
+        // public void Load(MPN mpn, Transform srcbody, Transform body1, Dictionary<string, Transform> trans, string bonename, string filename, string slotname, string AttachSlot, int AttachSubNo, string AttachName, int layer, bool f_bTemp, int version, bool crcImport, TBodySkin.SplitParam splitParam)
+
         [HarmonyPostfix]
         [HarmonyPatch(
             typeof(TBodySkin), nameof(TBodySkin.Load), typeof(MPN), typeof(Transform), typeof(Transform),
@@ -120,8 +122,9 @@ namespace COM3D2.HighHeel.Core
                 }
             }
         }
+        // public void LoadBody_R(string f_strModelFileName, Maid f_maid, int bodyVer, bool crcImport)
 
-        [HarmonyPostfix, HarmonyPatch(typeof(TBody), nameof(TBody.LoadBody_R))]
+        [HarmonyPostfix, HarmonyPatch(typeof(TBody), nameof(TBody.LoadBody_R), typeof(string), typeof(Maid), typeof(int), typeof(bool))]
         public static void OnLoadBody_R(TBody __instance)
         {
             if (__instance.boMAN) return;

@@ -8,14 +8,14 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Reference Include="0Harmony, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null">
-        <HintPath>..\lib\0Harmony.dll</HintPath>
+      <Reference Include="0Harmony20">
+        <HintPath>F:\COM3D2\BepInEx\core\0Harmony20.dll</HintPath>
       </Reference>
       <Reference Include="Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
         <HintPath>..\lib\Assembly-CSharp.dll</HintPath>
       </Reference>
-      <Reference Include="BepInEx, Version=5.3.0.0, Culture=neutral, PublicKeyToken=null">
-        <HintPath>..\lib\BepInEx.dll</HintPath>
+      <Reference Include="BepInEx">
+        <HintPath>F:\COM3D2\BepInEx\core\BepInEx.dll</HintPath>
       </Reference>
       <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed">
         <HintPath>..\lib\Newtonsoft.Json.dll</HintPath>

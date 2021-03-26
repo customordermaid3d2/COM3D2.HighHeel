@@ -37,9 +37,22 @@ namespace COM3D2.HighHeel
         public Plugin()
         {
             Instance = this;
-            Harmony.CreateAndPatchAll(typeof(Core.Hooks));
+            try
+            {
+                Harmony.CreateAndPatchAll(typeof(Core.Hooks));
+            }
+            catch (Exception e)
+            {
+                Plugin.Instance.Logger.LogWarning($"COM3D2.HighHeel.Plugin().Harmony.CreateAndPatchAll fail : {e.Message}");
+            }
+
             Configuration = new(new(Path.Combine(ConfigPath, ConfigName), false, Info.Metadata));
             Logger = base.Logger;
+
+            if (!Directory.Exists(ShoeConfigPath))
+            {
+                Directory.CreateDirectory(ShoeConfigPath);
+            }
 
             mainWindow = new();
             mainWindow.ReloadEvent += (_, _) => ShoeDatabase = LoadShoeDatabase();
@@ -49,11 +62,13 @@ namespace COM3D2.HighHeel
             mainWindow.ImportEvent += (_, args) => { ImportConfiguration(ref EditModeConfig, args.Text); mainWindow.editModeConfigUpdate(); };
 
             SceneManager.sceneLoaded += (_, _) => IsDance = FindObjectOfType<DanceMain>() != null;
-
+            
             ShoeDatabase = LoadShoeDatabase();
 
             ImportConfiguration(ref EditModeConfig, "");
             mainWindow.editModeConfigUpdate();
+
+
         }
 
         private void Update()
@@ -63,7 +78,9 @@ namespace COM3D2.HighHeel
             mainWindow.Update();
         }
 
-        private void OnGUI() => mainWindow.Draw();
+        private void OnGUI() {
+            mainWindow.Draw();
+        }
 
         private static Dictionary<string, Core.ShoeConfig> LoadShoeDatabase()
         {
@@ -102,11 +119,6 @@ namespace COM3D2.HighHeel
 
             if (string.IsNullOrEmpty(sanitizedFilename)) sanitizedFilename = "hhmod_configuration";
             else if (!sanitizedFilename.StartsWith("hhmod_")) sanitizedFilename = "hhmod_" + sanitizedFilename;
-
-            if (!Directory.Exists(ShoeConfigPath))
-            {
-                Directory.CreateDirectory(ShoeConfigPath);
-            }
 
             var fullPath = Path.Combine(ShoeConfigPath, sanitizedFilename);
 

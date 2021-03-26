@@ -71,14 +71,25 @@ namespace COM3D2.HighHeel.UI
 
         public void Update()
         {
-            if (!Visible || Input.mouseScrollDelta.y == 0f) return;
+            // GameMain.Instance.MainCamera.IsFadeOut() ||
+            if ( !Visible || Input.mouseScrollDelta.y == 0f) return;
 
-            var mousePos = new Vector2(Input.mousePosition.x, Screen.height - Input.mousePosition.y);
-            if (windowRect.Contains(mousePos)) Input.ResetInputAxes();
+            //try
+            //{
+                var mousePos = new Vector2(Input.mousePosition.x, Screen.height - Input.mousePosition.y);
+                if (windowRect.Contains(mousePos)) Input.ResetInputAxes();
+            //}
+            //catch (Exception e)
+            //{
+            //    Plugin.Instance.Logger.LogWarning($"Update() : {e.Message}");
+            //}
+
+
         }
 
         public void Draw()
         {
+            // GameMain.Instance.MainCamera.IsFadeOut()||
             if (!Visible) return;
 
             windowRect.x = Mathf.Clamp(windowRect.x, -windowRect.width + 20, Screen.width - 20);
