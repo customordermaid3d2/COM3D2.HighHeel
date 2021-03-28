@@ -32,8 +32,5 @@
       </PackageReference>
     </ItemGroup>
     
-    <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-        <Exec Command="xcopy /Y &quot;$(TargetPath)&quot; &quot;E:\Games\KISS\COM3D2\BepinEx\plugins\&quot;" />
-    </Target>
-	
+
 </Project>

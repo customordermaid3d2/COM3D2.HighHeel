@@ -123,7 +123,7 @@ namespace COM3D2.HighHeel.UI
 
             if (pluginEnabled != configPluginEnabled)
             {
-                if (configPluginEnabled) plugin.EditMode = false;
+                if (configPluginEnabled) plugin.EditMode = true;
                 plugin.Configuration.Enabled.Value = pluginEnabled;
             }
 
