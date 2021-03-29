@@ -1,6 +1,14 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "COM3D2.HighHeel", "COM3D2.HighHeel\COM3D2.HighHeel.csproj", "{387DACC6-B85B-4F2C-B7C6-01424D2CFEBE}"
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30523.141
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "COM3D2.HighHeel", "COM3D2.HighHeel\COM3D2.HighHeel.csproj", "{387DACC6-B85B-4F2C-B7C6-01424D2CFEBE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8F2215F1-64F7-4634-8AA5-CA919059E8EA}"
+	ProjectSection(SolutionItems) = preProject
+		README.MD = README.MD
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -12,5 +20,11 @@ Global
 		{387DACC6-B85B-4F2C-B7C6-01424D2CFEBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{387DACC6-B85B-4F2C-B7C6-01424D2CFEBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{387DACC6-B85B-4F2C-B7C6-01424D2CFEBE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BB9F8918-D544-4384-9A8E-E798534419B4}
 	EndGlobalSection
 EndGlobal
