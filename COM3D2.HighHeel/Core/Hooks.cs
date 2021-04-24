@@ -122,9 +122,12 @@ namespace COM3D2.HighHeel.Core
                 }
             }
         }
-        // public void LoadBody_R(string f_strModelFileName, Maid f_maid, int bodyVer, bool crcImport)
 
-        [HarmonyPostfix, HarmonyPatch(typeof(TBody), nameof(TBody.LoadBody_R), typeof(string), typeof(Maid), typeof(int), typeof(bool))]
+        // public void LoadBody_R(string f_strModelFileName, Maid f_maid) // 1.55
+        // public void LoadBody_R(string f_strModelFileName, Maid f_maid, int bodyVer, bool crcImport) / 1.57
+        //[HarmonyPostfix, HarmonyPatch(typeof(TBody), nameof(TBody.LoadBody_R), typeof(string), typeof(Maid), typeof(int), typeof(bool))]
+        //[HarmonyPostfix, HarmonyPatch(typeof(TBody), nameof(TBody.LoadBody_R), typeof(string), typeof(Maid), typeof(int), typeof(bool))]
+        [HarmonyPostfix, HarmonyPatch(typeof(TBody), "LoadBody_R")]
         public static void OnLoadBody_R(TBody __instance)
         {
             if (__instance.boMAN) return;

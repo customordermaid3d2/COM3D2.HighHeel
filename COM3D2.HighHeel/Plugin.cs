@@ -36,6 +36,7 @@ namespace COM3D2.HighHeel
 
         public Plugin()
         {
+            EditMode = true;
             Instance = this;
             try
             {

@@ -7,6 +7,10 @@
         <OutputType>Library</OutputType>
     </PropertyGroup>
 
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+      <Optimize>true</Optimize>
+    </PropertyGroup>
+
     <ItemGroup>
       <Reference Include="0Harmony20">
         <HintPath>F:\COM3D2\BepInEx\core\0Harmony20.dll</HintPath>
