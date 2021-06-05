@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.IO;
 using BepInEx;
 using BepInEx.Logging;
+using COM3D2.HighHeel.UI;
+using COM3D2API;
 using HarmonyLib;
 using Newtonsoft.Json;
 using UnityEngine.SceneManagement;
@@ -70,6 +72,11 @@ namespace COM3D2.HighHeel
             mainWindow.editModeConfigUpdate();
 
 
+        }
+
+        private void Start()
+        {
+            SystemShortcutAPI.AddButton("HighHeel", new Action(delegate () { mainWindow.Visible = !mainWindow.Visible; }), "HighHeel", GearMenu.Png);
         }
 
         private void Update()
