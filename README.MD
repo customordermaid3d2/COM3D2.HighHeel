@@ -5,3 +5,5 @@
 게임 켤시 자동으로 작동  
 
 ![2021-06-08 21 13 42](https://user-images.githubusercontent.com/20321215/121183169-c2971000-c89e-11eb-995e-2f61840a6bb4.png)
+
+https://youtu.be/05p-HsKSx34
