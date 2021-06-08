@@ -4,6 +4,7 @@ using System.IO;
 using BepInEx;
 using BepInEx.Logging;
 using COM3D2.HighHeel.UI;
+using COM3D2.Lilly.Plugin;
 using COM3D2API;
 using HarmonyLib;
 using Newtonsoft.Json;
@@ -76,7 +77,7 @@ namespace COM3D2.HighHeel
 
         private void Start()
         {
-            SystemShortcutAPI.AddButton("HighHeel", new Action(delegate () { mainWindow.Visible = !mainWindow.Visible; }), "HighHeel", GearMenu.Png);
+            SystemShortcutAPI.AddButton("HighHeel", new Action(delegate () { mainWindow.Visible = !mainWindow.Visible; }), "HighHeel", MyUtill.ExtractResource(Properties.Resources.icon));
         }
 
         private void Update()
